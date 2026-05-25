@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/admin/Desktop/website.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVANSH PRIME</title>
+    <style>
+        /* Base Setup */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #0b0b0d; color: #eeeeee; overflow-x: hidden; }
+        
+        /* Wallpaper Header Design */
+        header { 
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(11, 11, 13, 0.2), rgba(11, 11, 13, 0.95)), url('https://picsum.photos');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            padding: 100px 20px; /* Reduced to bring content up */
+            text-align: center; 
+            border-bottom: 4px solid #e74c3c;
+        }
+        
+        header h1 { 
+            font-size: 3.5rem; 
+            letter-spacing: 4px; 
+            margin: 0; 
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(231, 76, 60, 0.6);
+            font-weight: 900;
+            color: #ffffff;
+        }
+        
+        /* Knife Emoji Pulse Animation */
+        .knife-emoji { display: inline-block; animation: pulse 1.5s infinite alternate; }
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(231, 76, 60, 0.5)); }
+            100% { transform: scale(1.2) rotate(-10deg); filter: drop-shadow(0 0 10px rgba(231, 76, 60, 0.9)); }
+        }
+
+        nav { display: flex; justify-content: center; background: #0f0f12; padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
+        nav a { color: #bbbbbb; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; letter-spacing: 1px; }
+        nav a:hover { color: #e74c3c; text-shadow: 0 0 8px rgba(231, 76, 60, 0.6); }
+        
+        /* Container Blocks */
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 2rem; color: #ffffff; margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+        
+        /* Interactive About Box Container */
+        .interactive-title-btn { 
+            display: block; width: 100%; background: none; border: none; text-align: left; padding: 0;
+            cursor: pointer; font-size: 2rem; color: #ffffff; margin-bottom: 20px; letter-spacing: 2px; 
+            text-transform: uppercase; font-weight: bold; font-family: inherit; transition: 0.3s;
+        }
+        .interactive-title-btn:hover { color: #e74c3c; text-shadow: 0 0 10px rgba(231, 76, 60, 0.4); }
+        .interactive-title-btn .status-arrow { float: right; font-size: 1.5rem; color: #e74c3c; transition: transform 0.3s ease; }
+        .interactive-title-btn.active .status-arrow { transform: rotate(180deg); }
+        
+        .about-box { 
+            display: block; background: #141419; padding: 40px; border-radius: 12px; border-left: 5px solid #e74c3c; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-top: 1px solid #222; border-right: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .about-box p { font-size: 1.1rem; line-height: 1.8; color: #cccccc; margin-bottom: 25px; margin-top: 0; text-align: justify; }
+        .highlight-red { color: #e74c3c; font-weight: bold; text-shadow: 0 0 5px rgba(231, 76, 60, 0.2); }
+        .highlight-gold { color: #f1c40f; font-weight: bold; text-shadow: 0 0 5px rgba(241, 196, 15, 0.2); }
+
+        .prime-attributes { display: flex; flex-wrap: wrap; gap: 15px; padding: 0; list-style: none; margin: 0; }
+        .prime-attributes li { 
+            background: #1c1c24; color: #e74c3c; padding: 10px 20px; border-radius: 20px; 
+            font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; border: 1px solid #333; text-transform: uppercase;
+        }
+
+        /* --- TWO COLUMN SOCIAL GRID SYSTEM --- */
+        .social-contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+        
+        .interactive-link-card { 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #141419, #0f0f12); padding: 45px 25px; border-radius: 16px; 
+            border: 1px solid #25252b; text-decoration: none; color: #ffffff; transition: all 0.3s ease; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); position: relative; overflow: hidden;
+        }
+        
+        /* YouTube Card Specific Styles */
+        .interactive-link-card.youtube-card:hover { 
+            transform: translateY(-5px); border-color: #ff0000; 
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.25); 
+        }
+
+        /* Instagram Card Specific Styles */
+        .interactive-link-card.instagram-card:hover { 
+            transform: translateY(-5px); border-color: #e1306c; 
+            box-shadow: 0 15px 35px rgba(225, 48, 108, 0.25); 
+        }
+
+        .card-content { position: relative; z-index: 2; text-align: center; }
+        
+        .brand-icon { font-size: 3.5rem; margin-bottom: 15px; display: inline-block; transition: transform 0.3s ease; }
+        .brand-icon.yt-color { color: #ff0000; filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.2)); }
+        .brand-icon.ig-color { color: #e1306c; filter: drop-shadow(0 0 10px rgba(225, 48, 108, 0.2)); }
+        
+        .interactive-link-card:hover .brand-icon { transform: scale(1.1) rotate(4deg); }
+        
+        .interactive-link-card h3 { font-size: 1.6rem; margin: 0 0 10px 0; letter-spacing: 1px; font-weight: 800; color: #ffffff; }
+        .interactive-link-card p { font-size: 0.95rem; color: #b0b0b8; margin: 0; line-height: 1.6; }
+
+        /* ALL INVISIBLE VERTICAL SPACERS REMOVED TO PREVENT GLITCHING */
+
+        /* Scroll Elements */
+        #scrollTopBtn { display: none; position: fixed; bottom: 25px; right: 25px; z-index: 99; border: none; outline: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.1); }
+        
+        footer { text-align: center; padding: 30px; background: #070709; color: #555; border-top: 1px solid #1a1a22; font-size: 0.9rem; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to SHIVANSH PRIME <span class="knife-emoji">🔪</span> website</h1>
+    </header>
+
+    <nav>
+        <a href="file:///C:/Users/admin/Desktop/website.html#about">About</a>
+        <a href="file:///C:/Users/admin/Desktop/website.html#social-grid-zone">Connect</a>
+    </nav>
+
+    <!-- INTERACTIVE ABOUT SECTION -->
+    <div class="container" id="about">
+        <button class="interactive-title-btn active" id="toggleAboutBtn">
+            About SHIVANSH PRIME <span style="color: #e74c3c;">🔪</span>
+            <span class="status-arrow">▼</span>
+        </button>
+        
+        <div class="about-box" id="aboutContentBox">
+            <p>
+                Meet <span class="highlight-red">Shivansh Prime</span>, an unstoppable 6th-grade tech prodigy who is already mastering the digital world as an independent website builder and game developer. While most students his age are just learning the basics of computer literacy, Shivansh is actively designing functional websites and diving deep into complex game files. 
+            </p>
+            <p>
+                He recently proved his advanced problem-solving skills by successfully cracking a video game, rewriting its data structures to unlock <span class="highlight-gold">unlimited diamonds and gold</span> for a completely customized gaming experience. This impressive feat showcases his deep curiosity for software mechanics, coding logic, and digital reverse-engineering. 
+            </p>
+            <p>
+                By balancing his schoolwork with his passion for web development and game modding, Shivansh Prime is proving that age is just a number when it comes to technology. He is rapidly building a powerful portfolio of tech skills, setting himself up to become a leading software engineer and innovator in the near future.
+            </p>
+            <ul class="prime-attributes">
+                <li>💻 Web Developer</li>
+                <li>🕹️ Game Modder</li>
+                <li>⚡ Tech Prodigy</li>
+                <li>🚀 Future Engineer</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- IMMEDIATELY VISIBLE SOCIAL GRID -->
+    <div class="container" id="social-grid-zone">
+        <h2 class="section-title">Social &amp; Contact Grid</h2>
+        <div class="social-contact-grid">
+            
+            <!-- YouTube Card -->
+            <a href="https://youtube.com/" target="_blank" class="interactive-link-card youtube-card">
+                <div class="card-content">
+                    <div class="brand-icon yt-color">▶</div>
+                    <h3>YouTube Channel</h3>
+                    <p>Enter the hub. Subscribe for high-tier game modding breakthroughs, digital infrastructure walkthroughs, and live stream deployments.</p>
+                </div>
+            </a>
+            
+            <!-- Instagram Card -->
+            <a href="https://instagram.com/" target="_blank" class="interactive-link-card instagram-card">
+                <div class="card-content">
+                    <div class="brand-icon ig-color">📸</div>
+                    <h3>Instagram</h3>
+                    <p>Follow the timeline. Check out sneak peeks of upcoming game reverse-engineering layouts, code snippets, and behind-the-scenes progress logs.</p>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top">⬆️</button>
+
+    <footer>
+</footer></body></html>
